@@ -1,0 +1,104 @@
+.state-name {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  color: #f1f5f9;
+}
+
+.count1 {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  text-align: right;
+  color: #ff073a;
+}
+
+.count2 {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  text-align: right;
+  color: #007bff;
+}
+
+.count3 {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  color: #28a745;
+  text-align: right;
+}
+
+.count4 {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  color: #6c757d;
+  text-align: right;
+}
+
+.count5 {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  text-align: right;
+  color: #94a3b8;
+}
+
+@media screen and (max-width: 900px) {
+  .state-name {
+    font-size: 11px;
+  }
+
+  .count1 {
+    font-size: 11px;
+  }
+
+  .count2 {
+    font-size: 11px;
+  }
+
+  .count3 {
+    font-size: 11px;
+  }
+
+  .count4 {
+    font-size: 11px;
+  }
+
+  .count5 {
+    font-size: 11px;
+  }
+}
+
+@media screen and (max-width: 578px) {
+  .state-name {
+    font-size: 8px;
+  }
+
+  .count1 {
+    font-size: 8px;
+  }
+
+  .count2 {
+    font-size: 8px;
+  }
+
+  .count3 {
+    font-size: 8px;
+  }
+
+  .count4 {
+    font-size: 8px;
+  }
+
+  .count5 {
+    font-size: 8px;
+  }
+}

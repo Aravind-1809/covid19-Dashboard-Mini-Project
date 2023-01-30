@@ -1,0 +1,243 @@
+.search-container {
+  background-color: #2f2f43;
+  border-radius: 8px;
+  height: 72px;
+  width: 800px;
+  border: 0px solid;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  margin-top: 64px;
+}
+
+.search-icon {
+  font-size: 16px;
+  color: #94a3b8;
+  margin-right: 10px;
+}
+
+.search-input {
+  border: 0px solid;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #94a3b8;
+  background-color: transparent;
+  flex-grow: 1;
+}
+
+.corona-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+  flex-shrink: 0;
+  width: 80%;
+  margin-bottom: 100px;
+  margin-top: 112px;
+}
+
+.country-wide-containers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  flex-grow: 1;
+}
+
+.confirm {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  color: #ff073a;
+}
+
+.case-icon {
+  max-width: 38px;
+}
+
+.active {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  color: #007bff;
+}
+
+.recover {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  color: #28a745;
+}
+
+.decease {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  color: #6c757d;
+}
+
+.data-table {
+  background: #1e1e30;
+  border: 1px solid #475569;
+  box-shadow: 0px 4px 16px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex-shrink: 0;
+  flex-grow: 1;
+  width: 90%;
+  min-width: 350px;
+  padding-left: 0px;
+  margin-bottom: 100px;
+}
+
+.data-table1 {
+  background: #1e1e30;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex-shrink: 0;
+  flex-grow: 1;
+  width: 100%;
+  padding-left: 0px;
+  overflow: auto;
+}
+
+.table-head-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+  flex-shrink: 0;
+  width: 100%;
+  max-height: 80px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.line {
+  border: 1px solid #475569;
+  width: 100%;
+}
+
+.sort-icon {
+  color: #94a3b8;
+  font-size: 20px;
+}
+
+.empty-button {
+  border: none;
+  background-color: transparent;
+}
+
+.sort-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.table-heads {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  color: #f8fafc;
+}
+
+.search-result-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.overall-count1 {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  text-align: center;
+  color: #ff073a;
+}
+
+.overall-count2 {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  text-align: center;
+  color: #007bff;
+}
+
+.overall-count3 {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  text-align: center;
+  color: #28a745;
+}
+
+.overall-count4 {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  text-align: center;
+  color: #6c757d;
+}
+
+@media screen and (max-width: 900px) {
+  .search-container {
+    max-width: 500px;
+    height: 50px;
+    flex-shrink: 0;
+  }
+
+  .sort-icon {
+    font-size: 16px;
+  }
+
+  .table-heads {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 578px) {
+  .search-container {
+    max-width: 300px;
+    flex-shrink: 0;
+    height: 40px;
+  }
+  .table-heads {
+    font-size: 9px;
+  }
+
+  .sort-icon {
+    font-size: 12px;
+  }
+}
+
+.loader-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
