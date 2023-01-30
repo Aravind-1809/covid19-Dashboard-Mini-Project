@@ -1,9 +1,13 @@
+<<<<<<< HEAD
 import {Switch, Route} from 'react-router-dom'
 import './App.css'
 import Home from './components/Home'
 import About from './components/About'
 import NotFound from './components/NotFound'
 import SpecificState from './components/SpecificState'
+=======
+import './App.css'
+>>>>>>> 55889f964c4feb9c50d7ad717aea2ec8aebd9bf2
 
 const statesList = [
   {
@@ -152,6 +156,7 @@ const statesList = [
   },
 ]
 
+<<<<<<< HEAD
 const App = () => (
   <Switch>
     <Route exact path="/" component={Home} />
@@ -160,5 +165,8 @@ const App = () => (
     <Route component={NotFound} />
   </Switch>
 )
+=======
+const App = () => <div>Hello World</div>
+>>>>>>> 55889f964c4feb9c50d7ad717aea2ec8aebd9bf2
 
 export default App

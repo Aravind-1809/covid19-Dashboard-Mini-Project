@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import {VscGithubAlt} from 'react-icons/vsc'
 import {FaTwitter} from 'react-icons/fa'
 import {FiInstagram} from 'react-icons/fi'
@@ -17,6 +18,12 @@ export default function Footer() {
         <FiInstagram className="icon" />
         <FaTwitter className="icon" />
       </div>
+=======
+export default function Footer() {
+  return (
+    <div>
+      <h1>Footer</h1>
+>>>>>>> 55889f964c4feb9c50d7ad717aea2ec8aebd9bf2
     </div>
   )
 }
