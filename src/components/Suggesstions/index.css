@@ -3,7 +3,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 50%;
+  width: 750px;
   flex-grow: 1;
   flex-shrink: 0;
   border-bottom: 0.3px solid #64748b;
@@ -44,4 +44,24 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+@media screen and (max-width: 900px) {
+  .suggestion-list {
+    width: 90%;
+  }
+
+  .suggestion-name {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 578px) {
+  .suggestion-list {
+    width: 90%;
+  }
+
+  .suggestion-name {
+    font-size: 14px;
+  }
 }

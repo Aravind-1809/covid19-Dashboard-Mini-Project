@@ -321,55 +321,57 @@ class SpecificState extends Component {
     }
 
     return (
-      <div className="barchart-container">
-        <BarChart
-          width={1050}
-          height={450}
-          data={data1}
-          barGap={50}
-          barCategoryGap={50}
-          margin={{top: 20, right: 10, left: 10, bottom: 10}}
-        >
-          <XAxis
-            tickFormatter={dateFormat}
-            dataKey="date"
-            stroke={0}
-            tick={{
-              fill:
-                (isConfirmActive && '#9a0e31') ||
-                (isActiveActive && '#0A4FA0') ||
-                (isRecoverActive && '#216837') ||
-                (isDeceasedActive && '#474C57'),
-            }}
-          />
-          <Bar
-            barSize={60}
-            dataKey={
-              (isConfirmActive && 'dateWiseConfirm') ||
-              (isActiveActive && 'dateWiseActive') ||
-              (isDeceasedActive && 'dateWiseDeceased') ||
-              (isRecoverActive && 'dateWiseRecover')
-            }
-            fill={
-              (isConfirmActive && '#9a0e31') ||
-              (isActiveActive && '#0A4FA0') ||
-              (isRecoverActive && '#216837') ||
-              (isDeceasedActive && '#474C57')
-            }
-            label={
-              <CustomizedLabel
-                position="top"
-                fill={
+      <div>
+        <div className="barchart-container">
+          <BarChart
+            width={1050}
+            height={450}
+            data={data1}
+            barGap={50}
+            barCategoryGap={50}
+            margin={{top: 20, right: 10, left: 10, bottom: 10}}
+          >
+            <XAxis
+              tickFormatter={dateFormat}
+              dataKey="date"
+              stroke={0}
+              tick={{
+                fill:
                   (isConfirmActive && '#9a0e31') ||
                   (isActiveActive && '#0A4FA0') ||
                   (isRecoverActive && '#216837') ||
-                  (isDeceasedActive && '#474C57')
-                }
-              />
-            }
-            radius={[8, 8, 0, 0]}
-          />
-        </BarChart>
+                  (isDeceasedActive && '#474C57'),
+              }}
+            />
+            <Bar
+              barSize={60}
+              dataKey={
+                (isConfirmActive && 'dateWiseConfirm') ||
+                (isActiveActive && 'dateWiseActive') ||
+                (isDeceasedActive && 'dateWiseDeceased') ||
+                (isRecoverActive && 'dateWiseRecover')
+              }
+              fill={
+                (isConfirmActive && '#9a0e31') ||
+                (isActiveActive && '#0A4FA0') ||
+                (isRecoverActive && '#216837') ||
+                (isDeceasedActive && '#474C57')
+              }
+              label={
+                <CustomizedLabel
+                  position="top"
+                  fill={
+                    (isConfirmActive && '#9a0e31') ||
+                    (isActiveActive && '#0A4FA0') ||
+                    (isRecoverActive && '#216837') ||
+                    (isDeceasedActive && '#474C57')
+                  }
+                />
+              }
+              radius={[8, 8, 0, 0]}
+            />
+          </BarChart>
+        </div>
       </div>
     )
   }
@@ -422,7 +424,11 @@ class SpecificState extends Component {
         margin={{top: 40, right: 50, left: 50, bottom: 40}}
       >
         <XAxis dataKey="date" stroke="#FF073A" />
-        <YAxis stroke="#FF073A" tickFormatter={this.DataFormatter1} />
+        <YAxis
+          stroke="#FF073A"
+          tickFormatter={this.DataFormatter1}
+          domain={['dataMin', 'dataMax']}
+        />
         <Tooltip />
         <Line
           type="monotone"
@@ -444,7 +450,11 @@ class SpecificState extends Component {
         margin={{top: 40, right: 50, left: 50, bottom: 40}}
       >
         <XAxis dataKey="date" stroke="#007BFF" />
-        <YAxis stroke="#007BFF" tickFormatter={this.DataFormatter1} />
+        <YAxis
+          stroke="#007BFF"
+          tickFormatter={this.DataFormatter1}
+          domain={['dataMin', 'dataMax']}
+        />
         <Tooltip />
         <Line
           type="monotone"
@@ -466,7 +476,11 @@ class SpecificState extends Component {
         margin={{top: 40, right: 50, left: 50, bottom: 40}}
       >
         <XAxis dataKey="date" stroke="#27A243" />
-        <YAxis stroke="#27A243" tickFormatter={this.DataFormatter1} />
+        <YAxis
+          stroke="#27A243"
+          tickFormatter={this.DataFormatter1}
+          domain={['dataMin', 'dataMax']}
+        />
         <Tooltip />
         <Line
           type="monotone"
@@ -488,7 +502,11 @@ class SpecificState extends Component {
         margin={{top: 40, right: 50, left: 50, bottom: 40}}
       >
         <XAxis dataKey="date" stroke="#6C757D" />
-        <YAxis stroke="#6C757D" tickFormatter={this.DataFormatter1} />
+        <YAxis
+          stroke="#6C757D"
+          tickFormatter={this.DataFormatter1}
+          domain={['dataMin', 'dataMax']}
+        />
         <Tooltip />
         <Line
           type="monotone"
@@ -510,7 +528,11 @@ class SpecificState extends Component {
         margin={{top: 40, right: 50, left: 50, bottom: 40}}
       >
         <XAxis dataKey="date" stroke="#9673B9" />
-        <YAxis stroke="#9673B9" tickFormatter={this.DataFormatter1} />
+        <YAxis
+          stroke="#9673B9"
+          tickFormatter={this.DataFormatter1}
+          domain={['dataMin', 'dataMax']}
+        />
         <Tooltip />
         <Line
           type="monotone"
@@ -565,17 +587,17 @@ class SpecificState extends Component {
             <p className="tested-count">{tested}</p>
           </div>
         </div>
-        <div className="corona-container">
+        <div className="corona-container1">
           <button
             onClick={this.activateConfirm}
             type="button"
             className={
-              isConfirmActive ? 'confirm-active-button' : 'empty-button'
+              isConfirmActive ? 'confirm-active-button' : 'empty-button1'
             }
           >
             <div
               testid="stateSpecificConfirmedCasesContainer"
-              className="country-wide-containers"
+              className="country-wide-containers1"
             >
               <p className="confirm">Confirmed</p>
               <img
@@ -589,11 +611,13 @@ class SpecificState extends Component {
           <button
             onClick={this.activateActive}
             type="button"
-            className={isActiveActive ? 'active-active-button' : 'empty-button'}
+            className={
+              isActiveActive ? 'active-active-button' : 'empty-button1'
+            }
           >
             <div
               testid="stateSpecificActiveCasesContainer"
-              className="country-wide-containers"
+              className="country-wide-containers1"
             >
               <p className="active">Active</p>
               <img
@@ -608,12 +632,12 @@ class SpecificState extends Component {
             onClick={this.activateRecover}
             type="button"
             className={
-              isRecoverActive ? 'recover-active-button' : 'empty-button'
+              isRecoverActive ? 'recover-active-button' : 'empty-button1'
             }
           >
             <div
               testid="stateSpecificRecoveredCasesContainer"
-              className="country-wide-containers"
+              className="country-wide-containers1"
             >
               <p className="recover">Recovered</p>
               <img
@@ -628,12 +652,12 @@ class SpecificState extends Component {
             onClick={this.activateDeceased}
             type="button"
             className={
-              isDeceasedActive ? 'deceased-active-button' : 'empty-button'
+              isDeceasedActive ? 'deceased-active-button' : 'empty-button1'
             }
           >
             <div
               testid="stateSpecificDeceasedCasesContainer"
-              className="country-wide-containers"
+              className="country-wide-containers1"
             >
               <p className="decease">Deceased</p>
               <img

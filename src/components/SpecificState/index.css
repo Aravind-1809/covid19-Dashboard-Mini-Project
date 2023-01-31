@@ -50,6 +50,7 @@
   font-weight: 500;
   font-size: 16px;
   color: #94a3b8;
+  align-self: flex-end;
 }
 
 .tested-count {
@@ -62,6 +63,10 @@
 }
 
 .confirm-active-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 264px;
   height: 232px;
   background: #331427;
@@ -69,6 +74,10 @@
 }
 
 .active-active-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 264px;
   height: 232px;
   background: #132240;
@@ -76,6 +85,10 @@
 }
 
 .recover-active-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 264px;
   height: 232px;
   background: #182829;
@@ -83,6 +96,10 @@
 }
 
 .deceased-active-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 264px;
   height: 232px;
   background: #212230;
@@ -290,4 +307,250 @@
   flex-grow: 1;
   flex-shrink: 0;
   margin-bottom: 96px;
+}
+
+.country-wide-containers1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  flex-grow: 1;
+  width: 200px;
+}
+
+.corona-container1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+  width: 80%;
+  margin-bottom: 100px;
+  margin-top: 112px;
+}
+
+.empty-button1 {
+  border: none;
+  background-color: transparent;
+  width: 264px;
+  height: 232px;
+}
+
+@media screen and (max-width: 900px) {
+  .corona-container1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 90%;
+  }
+
+  .empty-button1 {
+    width: 220px;
+    height: 220px;
+    margin: 25px;
+  }
+
+  .active-active-button {
+    height: 220px;
+    margin: 25px;
+    width: 220px;
+  }
+
+  .confirm-active-button {
+    width: 220px;
+    height: 220px;
+    margin: 25px;
+  }
+
+  .recover-active-button {
+    width: 220px;
+    height: 220px;
+    margin: 25px;
+  }
+
+  .deceased-active-button {
+    width: 220px;
+    height: 220px;
+    margin: 25px;
+  }
+}
+
+@media screen and (min-width: 901px) and (max-width: 950px) {
+  .corona-container1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 90%;
+  }
+
+  .empty-button1 {
+    width: 240px;
+    height: 240px;
+    margin: 30px;
+  }
+
+  .active-active-button {
+    height: 240px;
+    margin: 30px;
+    width: 240px;
+  }
+
+  .confirm-active-button {
+    width: 240px;
+    height: 240px;
+    margin: 30px;
+  }
+
+  .recover-active-button {
+    width: 240px;
+    height: 240px;
+    margin: 30px;
+  }
+
+  .deceased-active-button {
+    width: 240px;
+    height: 240px;
+    margin: 30px;
+  }
+}
+
+@media screen and (max-width: 578px) {
+  .corona-container1 {
+    margin-top: 32px;
+    width: 90%;
+    flex-grow: 1;
+    margin-bottom: 50px;
+  }
+
+  .daily-spread {
+    align-self: center;
+    font-size: 24px;
+  }
+
+  .daily-spread-container {
+    margin-bottom: 60px;
+  }
+
+  .barchart-container {
+    margin-bottom: 40px;
+  }
+
+  .top-district {
+    font-size: 24px;
+  }
+
+  .state {
+    font-size: 16px;
+  }
+
+  .numbs {
+    font-size: 16px;
+  }
+
+  .dist {
+    font-size: 12px;
+  }
+
+  .top-district-container {
+    margin-bottom: 40px;
+  }
+
+  .last-update {
+    font-size: 12px;
+  }
+
+  .tested {
+    font-size: 12px;
+    align-self: flex-end;
+  }
+
+  .tested-count {
+    font-size: 16px;
+  }
+
+  .corona-container1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 95%;
+  }
+
+  .confirm-active-button {
+    min-width: 148px;
+    max-height: 148px;
+    max-width: 148px;
+    min-height: 148px;
+    margin: 10px;
+  }
+
+  .empty-button1 {
+    min-width: 148px;
+    max-height: 148px;
+    max-width: 148px;
+    min-height: 148px;
+    margin: 10px;
+  }
+
+  .active-active-button {
+    min-width: 148px;
+    max-height: 148px;
+    max-width: 148px;
+    min-height: 148px;
+    margin: 10px;
+  }
+
+  .deceased-active-button {
+    min-width: 148px;
+    max-height: 148px;
+    max-width: 148px;
+    min-height: 148px;
+    margin: 10px;
+  }
+
+  .recover-active-button {
+    min-width: 148px;
+    max-height: 148px;
+    max-width: 148px;
+    min-height: 148px;
+    margin: 10px;
+  }
+
+  .confirm {
+    font-size: 12px;
+  }
+
+  .active {
+    font-size: 12px;
+  }
+
+  .recover {
+    font-size: 12px;
+  }
+
+  .decease {
+    font-size: 12px;
+  }
+
+  .overall-count1 {
+    font-size: 16px;
+  }
+
+  .overall-count2 {
+    font-size: 16px;
+  }
+
+  .overall-count3 {
+    font-size: 16px;
+  }
+
+  .overall-count4 {
+    font-size: 16px;
+  }
 }

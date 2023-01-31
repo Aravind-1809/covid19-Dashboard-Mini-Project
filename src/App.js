@@ -1,13 +1,11 @@
-<<<<<<< HEAD
 import {Switch, Route} from 'react-router-dom'
-import './App.css'
+import {Component} from 'react'
 import Home from './components/Home'
 import About from './components/About'
 import NotFound from './components/NotFound'
 import SpecificState from './components/SpecificState'
-=======
 import './App.css'
->>>>>>> 55889f964c4feb9c50d7ad717aea2ec8aebd9bf2
+import CovidContext from './Context/CovidContext'
 
 const statesList = [
   {
@@ -156,17 +154,36 @@ const statesList = [
   },
 ]
 
-<<<<<<< HEAD
-const App = () => (
-  <Switch>
-    <Route exact path="/" component={Home} />
-    <Route exact path="/about" component={About} />
-    <Route path="/state/:stateCode" component={SpecificState} />
-    <Route component={NotFound} />
-  </Switch>
-)
-=======
-const App = () => <div>Hello World</div>
->>>>>>> 55889f964c4feb9c50d7ad717aea2ec8aebd9bf2
+class App extends Component {
+  state = {showNavs: false}
+
+  displayMobileView = () => {
+    this.setState({showNavs: false})
+  }
+
+  displayMenus = () => {
+    this.setState({showNavs: true})
+  }
+
+  render() {
+    const {showNavs} = this.state
+    return (
+      <CovidContext.Provider
+        value={{
+          showNavs,
+          displayMobileView: this.displayMobileView,
+          displayMenus: this.displayMenus,
+        }}
+      >
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/about" component={About} />
+          <Route path="/state/:stateCode" component={SpecificState} />
+          <Route component={NotFound} />
+        </Switch>
+      </CovidContext.Provider>
+    )
+  }
+}
 
 export default App
