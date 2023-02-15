@@ -237,7 +237,7 @@ class Home extends Component {
         </div>
         <div testid="stateWiseCovidDataTable" className="data-table">
           <ul className="data-table1">
-            <li className="table-head-container">
+            <div className="table-head-container">
               <div className="sort-container">
                 <p className="table-heads">States/UT</p>
                 <button
@@ -262,7 +262,7 @@ class Home extends Component {
               <p className="table-heads">Recovered</p>
               <p className="table-heads">Deceased</p>
               <p className="table-heads">Population</p>
-            </li>
+            </div>
             <hr className="line" />
             {this.renderStats()}
           </ul>

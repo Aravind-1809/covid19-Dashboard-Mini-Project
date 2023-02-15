@@ -321,57 +321,56 @@ class SpecificState extends Component {
     }
 
     return (
-      <div>
-        <div className="barchart-container">
-          <BarChart
-            width={1050}
-            height={450}
-            data={data1}
-            barGap={50}
-            barCategoryGap={50}
-            margin={{top: 20, right: 10, left: 10, bottom: 10}}
-          >
-            <XAxis
-              tickFormatter={dateFormat}
-              dataKey="date"
-              stroke={0}
-              tick={{
-                fill:
-                  (isConfirmActive && '#9a0e31') ||
-                  (isActiveActive && '#0A4FA0') ||
-                  (isRecoverActive && '#216837') ||
-                  (isDeceasedActive && '#474C57'),
-              }}
-            />
-            <Bar
-              barSize={60}
-              dataKey={
-                (isConfirmActive && 'dateWiseConfirm') ||
-                (isActiveActive && 'dateWiseActive') ||
-                (isDeceasedActive && 'dateWiseDeceased') ||
-                (isRecoverActive && 'dateWiseRecover')
-              }
-              fill={
+      <div className="barchart-container">
+        <BarChart
+          width={1050}
+          height={450}
+          data={data1}
+          barGap={50}
+          barCategoryGap={50}
+          margin={{top: 20, right: 10, left: 10, bottom: 10}}
+        >
+          <XAxis
+            tickFormatter={dateFormat}
+            dataKey="date"
+            stroke={0}
+            tick={{
+              fill:
                 (isConfirmActive && '#9a0e31') ||
                 (isActiveActive && '#0A4FA0') ||
                 (isRecoverActive && '#216837') ||
-                (isDeceasedActive && '#474C57')
-              }
-              label={
-                <CustomizedLabel
-                  position="top"
-                  fill={
-                    (isConfirmActive && '#9a0e31') ||
-                    (isActiveActive && '#0A4FA0') ||
-                    (isRecoverActive && '#216837') ||
-                    (isDeceasedActive && '#474C57')
-                  }
-                />
-              }
-              radius={[8, 8, 0, 0]}
-            />
-          </BarChart>
-        </div>
+                (isDeceasedActive && '#474C57'),
+            }}
+            tickMargin={10}
+          />
+          <Bar
+            barSize={60}
+            dataKey={
+              (isConfirmActive && 'dateWiseConfirm') ||
+              (isActiveActive && 'dateWiseActive') ||
+              (isDeceasedActive && 'dateWiseDeceased') ||
+              (isRecoverActive && 'dateWiseRecover')
+            }
+            fill={
+              (isConfirmActive && '#9a0e31') ||
+              (isActiveActive && '#0A4FA0') ||
+              (isRecoverActive && '#216837') ||
+              (isDeceasedActive && '#474C57')
+            }
+            label={
+              <CustomizedLabel
+                position="top"
+                fill={
+                  (isConfirmActive && '#9a0e31') ||
+                  (isActiveActive && '#0A4FA0') ||
+                  (isRecoverActive && '#216837') ||
+                  (isDeceasedActive && '#474C57')
+                }
+              />
+            }
+            radius={[8, 8, 0, 0]}
+          />
+        </BarChart>
       </div>
     )
   }
@@ -411,6 +410,9 @@ class SpecificState extends Component {
     if (number > 1000000) {
       return `${(number / 1000000).toString()}M`
     }
+    if (number > 10000000) {
+      return `${(number / 1000000).toString()}C`
+    }
     return number.toString()
   }
 
@@ -423,13 +425,29 @@ class SpecificState extends Component {
         data={data2}
         margin={{top: 40, right: 50, left: 50, bottom: 40}}
       >
-        <XAxis dataKey="date" stroke="#FF073A" />
+        <XAxis dataKey="date" stroke="#FF073A" interval={20} tickMargin={10} />
         <YAxis
           stroke="#FF073A"
           tickFormatter={this.DataFormatter1}
           domain={['dataMin', 'dataMax']}
+          tickMargin={10}
         />
-        <Tooltip />
+        <Tooltip
+          wrapperStyle={{
+            width: 88,
+            color: '#FF073A',
+            border: '1px solid #E2E8F0',
+            borderRadius: 4,
+            backgroundColor: '#E2E8F0',
+          }}
+          formatter={this.DataFormatter1}
+          labelFormatter={value =>
+            `${new Date(value).getDate()} ${new Date(
+              value,
+            ).toLocaleString('default', {month: 'long'})}`
+          }
+          contentStyle={{fontSize: 12}}
+        />
         <Line
           type="monotone"
           dataKey="dateWiseConfirm"
@@ -449,13 +467,29 @@ class SpecificState extends Component {
         data={data3}
         margin={{top: 40, right: 50, left: 50, bottom: 40}}
       >
-        <XAxis dataKey="date" stroke="#007BFF" />
+        <XAxis dataKey="date" stroke="#007BFF" interval={20} tickMargin={10} />
         <YAxis
           stroke="#007BFF"
           tickFormatter={this.DataFormatter1}
           domain={['dataMin', 'dataMax']}
+          tickMargin={10}
         />
-        <Tooltip />
+        <Tooltip
+          wrapperStyle={{
+            width: 88,
+            color: '#007BFF',
+            border: '1px solid #E2E8F0',
+            borderRadius: 4,
+            backgroundColor: '#E2E8F0',
+          }}
+          formatter={this.DataFormatter1}
+          labelFormatter={value =>
+            `${new Date(value).getDate()} ${new Date(
+              value,
+            ).toLocaleString('default', {month: 'long'})}`
+          }
+          contentStyle={{fontSize: 12}}
+        />
         <Line
           type="monotone"
           dataKey="dateWiseActive"
@@ -475,13 +509,29 @@ class SpecificState extends Component {
         data={data4}
         margin={{top: 40, right: 50, left: 50, bottom: 40}}
       >
-        <XAxis dataKey="date" stroke="#27A243" />
+        <XAxis dataKey="date" stroke="#27A243" interval={20} tickMargin={10} />
         <YAxis
           stroke="#27A243"
           tickFormatter={this.DataFormatter1}
           domain={['dataMin', 'dataMax']}
+          tickMargin={10}
         />
-        <Tooltip />
+        <Tooltip
+          wrapperStyle={{
+            width: 88,
+            color: '#27A243',
+            border: '1px solid #E2E8F0',
+            borderRadius: 4,
+            backgroundColor: '#E2E8F0',
+          }}
+          formatter={this.DataFormatter1}
+          labelFormatter={value =>
+            `${new Date(value).getDate()} ${new Date(
+              value,
+            ).toLocaleString('default', {month: 'long'})}`
+          }
+          contentStyle={{fontSize: 12}}
+        />
         <Line
           type="monotone"
           dataKey="dateWiseRecover"
@@ -501,13 +551,29 @@ class SpecificState extends Component {
         data={data5}
         margin={{top: 40, right: 50, left: 50, bottom: 40}}
       >
-        <XAxis dataKey="date" stroke="#6C757D" />
+        <XAxis dataKey="date" stroke="#6C757D" interval={20} tickMargin={10} />
         <YAxis
           stroke="#6C757D"
           tickFormatter={this.DataFormatter1}
           domain={['dataMin', 'dataMax']}
+          tickMargin={10}
         />
-        <Tooltip />
+        <Tooltip
+          wrapperStyle={{
+            width: 88,
+            color: '#6C757D',
+            border: '1px solid #E2E8F0',
+            borderRadius: 4,
+            backgroundColor: '#E2E8F0',
+          }}
+          formatter={this.DataFormatter1}
+          labelFormatter={value =>
+            `${new Date(value).getDate()} ${new Date(
+              value,
+            ).toLocaleString('default', {month: 'long'})}`
+          }
+          contentStyle={{fontSize: 12}}
+        />
         <Line
           type="monotone"
           dataKey="dateWiseDeceased"
@@ -527,13 +593,29 @@ class SpecificState extends Component {
         data={data6}
         margin={{top: 40, right: 50, left: 50, bottom: 40}}
       >
-        <XAxis dataKey="date" stroke="#9673B9" />
+        <XAxis dataKey="date" stroke="#9673B9" interval={20} tickMargin={10} />
         <YAxis
           stroke="#9673B9"
           tickFormatter={this.DataFormatter1}
           domain={['dataMin', 'dataMax']}
+          tickMargin={10}
         />
-        <Tooltip />
+        <Tooltip
+          wrapperStyle={{
+            width: 88,
+            color: '#9673B9',
+            border: '1px solid #E2E8F0',
+            borderRadius: 4,
+            backgroundColor: '#E2E8F0',
+          }}
+          formatter={this.DataFormatter1}
+          labelFormatter={value =>
+            `${new Date(value).getDate()} ${new Date(
+              value,
+            ).toLocaleString('default', {month: 'long'})}`
+          }
+          contentStyle={{fontSize: 12}}
+        />
         <Line
           type="monotone"
           dataKey="dateWiseTested"
@@ -694,34 +776,36 @@ class SpecificState extends Component {
 
   renderTimeline = () => {
     const {status, timelineData} = this.state
-    console.log(timelineData)
+    const timelineKey = Object.keys(timelineData)
+    const timelineObj = []
+    timelineKey.forEach(each => {
+      if (timelineData[each]) {
+        const {dateWiseData} = timelineData[each]
+        const {sortedData} = timelineData[each]
+
+        timelineObj.push(dateWiseData)
+        timelineObj.push(sortedData)
+      }
+    })
+    console.log(timelineObj)
+
     return (
       <>
         {status === apiStatus.inProgress ? (
           this.timeLineLoadingView()
         ) : (
           <>
-            {timelineData.map(each => this.renderBarChart(each.sortedData))}
+            {this.renderBarChart(timelineObj[1])}
             <div
-              testid="lineChartsContainer"
               className="daily-spread-container"
+              testid="lineChartsContainer"
             >
               <h1 className="daily-spread">Daily Spread Trends</h1>
-              {timelineData.map(each =>
-                this.renderConfirmLineChart(each.dateWiseData),
-              )}
-              {timelineData.map(each =>
-                this.renderActiveLineChart(each.dateWiseData),
-              )}
-              {timelineData.map(each =>
-                this.renderRecoveredLineChart(each.dateWiseData),
-              )}
-              {timelineData.map(each =>
-                this.renderDeceasedLineChart(each.dateWiseData),
-              )}
-              {timelineData.map(each =>
-                this.renderTestedLineChart(each.dateWiseData),
-              )}
+              {this.renderConfirmLineChart(timelineObj[0])}
+              {this.renderActiveLineChart(timelineObj[0])}
+              {this.renderRecoveredLineChart(timelineObj[0])}
+              {this.renderDeceasedLineChart(timelineObj[0])}
+              {this.renderTestedLineChart(timelineObj[0])}
             </div>
 
             <Footer />
